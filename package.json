@@ -1,0 +1,25 @@
+{
+  "name": "goit-node-js-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladymyrRzhanov/goit-node-js-01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladymyrRzhanov/goit-node-js-01/issues"
+  },
+  "homepage": "https://github.com/VladymyrRzhanov/goit-node-js-01#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.2.0"
+  }
+}
