@@ -14,24 +14,26 @@ const readContacts = async () => {
     throw error;
   }
 };
-// TODO: задокументировать каждую функцию
+
 const listContacts = () => {
   return readContacts();
 };
 
 const getContactById = async (contactId) => {
   const contacts = await readContacts();
-  const result = contacts.find(contact => contact.id === contactId);
+  const result = contacts.find(contact => String(contact.id) === contactId);
   return result;
 };
 
 const removeContact = async (contactId) => {
   const contacts = await readContacts();
-  const result = contacts.filter(contact => contact.id !== contactId);
-  // await fs.writeFile(
-  //   contactsPath,
-  //   JSON.stringify(result, null, 2)
-  // );
+  const result = contacts.find(contact => String(contact.id) === contactId);
+  const contactIndex = contacts.indexOf(result);
+  contacts.splice(contactIndex, 1);
+  await fs.writeFile(
+    contactsPath,
+    JSON.stringify(contacts, null, 2)
+  );
   return result;
 };
 

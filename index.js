@@ -47,13 +47,13 @@ function invokeAction({ action, id, name, email, phone }) {
     case 'remove':
        removeContact(id)
          .then(contact => {
-          //  if (contact) {
+           if (contact) {
              console.log(contact);
-          //   console.log(chalk.redBright('Remove contact:'));
-          //   console.log(contact);
-          // } else {
-          //    console.log(chalk.red('Contact not found'));
-          // }
+            console.log(chalk.redBright('Remove contact:'));
+            console.log(contact);
+          } else {
+             console.log(chalk.red('Contact not found'));
+          }
         })
         .catch(console.error);
       break;
